@@ -12,13 +12,12 @@ class PostController extends Controller
 
 
     public function index(){
+        $latest = Post::latest()->take(3)->get() ;
         $posts = Post::latest()->get() ;
-        dd($posts) ;
-        return view('posts.index' , compact('posts'));
+        return view('index' , compact('posts' , 'latest'));
     }
     public function show($id){
         $post = Post::findorfail($id);
-        dd($post);
-        return view('posts.index' , compact('post'));
+        return view('post-details' , compact('post'));
     }
 }
