@@ -23,6 +23,13 @@ Route::get('/', function () {
 Route::get('/posts', [PostController::class, 'index']);
 Route::get('/posts/{post}', [PostController::class, 'show']);
 
+Route::get('/about', function(){
+    return view('about');
+});
+Route::get('/contact', function(){
+    return view('contact');
+});
+
 
 
 use App\Http\Controllers\UserController;
