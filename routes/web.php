@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
+
+
+
+use App\Http\Controllers\UserController;
+
+// Using PHP callable syntax...
+// Route::get('/users', [UserController::class, 'index']);
+
+// Using string syntax...
+// Route::get('/users', 'App\Http\Controllers\UserController@index');
 
