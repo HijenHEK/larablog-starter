@@ -22,37 +22,14 @@
             <div class="col-lg-12">
               <div class="text-content">
                 <h4>Post Details</h4>
-                <h2>Single blog post</h2>
+                <h2>{{$post->title}}</h2>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-    
-    <!-- Banner Ends Here -->
 
-    <section class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="main-content">
-              <div class="row">
-                <div class="col-lg-8">
-                  <span>Stand Blog HTML5 Template</span>
-                  <h4>Creative HTML Template For Bloggers!</h4>
-                </div>
-                <div class="col-lg-4">
-                  <div class="main-button">
-                    <a rel="nofollow" href="https://templatemo.com/tm-551-stand-blog" target="_parent">Download Now!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
     <section class="blog-posts grid-system">
@@ -68,7 +45,7 @@
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
-                      <a href="post-details.html"><h4>Aenean pulvinar gravida sem nec</h4></a>
+                    <a href="/posts/{{$post->id}}"><h4>{{$post->title}}</h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 12, 2020</a></li>
@@ -98,7 +75,7 @@
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <div class="sidebar-item comments">
+                  {{-- <div class="sidebar-item comments">
                     <div class="sidebar-heading">
                       <h2>4 comments</h2>
                     </div>
@@ -142,10 +119,10 @@
                         </li>
                       </ul>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
                 <div class="col-lg-12">
-                  <div class="sidebar-item submit-comment">
+                  {{-- <div class="sidebar-item submit-comment">
                     <div class="sidebar-heading">
                       <h2>Your comment</h2>
                     </div>
@@ -180,12 +157,12 @@
                         </div>
                       </form>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          {{-- <div class="col-lg-4">
             <div class="sidebar">
               <div class="row">
                 <div class="col-lg-12">
@@ -255,7 +232,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
     </section>

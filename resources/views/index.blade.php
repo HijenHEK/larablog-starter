@@ -51,7 +51,7 @@
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
-                      <a href="post-details.html"><h4>{{$post->title}}</h4></a>
+                    <a href="posts/{{$post->id}}"><h4>{{$post->title}}</h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 31, 2020</a></li>
