@@ -69,7 +69,22 @@
                             <p class="text-danger">{{ $errors->first('body') }} </p>
 
                           </div>
-                          
+                          <div class=" form-group col-md-6 col-sm-12">
+                            <fieldset>
+                              <select name="tag[]"  data-live-search="true"
+                              class="form-control selectpicker {{ $errors->first('tag') ? 'is-invalid' : '' }}" 
+                              id="tags" multiple >
+                                  @foreach ($tags as $tag)
+                                    <option value="{{$tag->id}}" {{$post->tags()->find($tag->id) ? 'selected' : ''}}>
+                                      {{$tag->name}}
+                                    </option>
+                                  @endforeach
+
+                              </select>
+                            </fieldset>
+                            <p class="text-danger">{{ $errors->first('tag') }} </p>
+
+                          </div>
                           <div class="col-lg-12">
                             <fieldset>
                               <button type="submit" id="form-submit" class="btn btn-success">Post it !</button>
