@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +15,25 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     $container = new \App\Container ;
+
+//     $container->bind('example' , function(){
+//         return (new \App\Example);
+        
+//     });
+//     $e = $container->resolve('example');
+//     $e->display();
+
+    
+    
+// });
 
 
 
 Route::get('/posts', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index']);
+
 Route::get('/posts/create', [PostController::class, 'create']);
 
 Route::get('/posts/{post}', [PostController::class, 'show']);
@@ -32,9 +45,10 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy']);
 Route::get('/about', function(){
     return view('about');
 });
-Route::get('/contact', function(){
-    return view('contact');
-});
+
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact', [ContactController::class, 'store']);
+
 
 
 

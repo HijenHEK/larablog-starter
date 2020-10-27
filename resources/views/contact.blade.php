@@ -46,33 +46,55 @@
                       <h2>Send us a message</h2>
                     </div>
                     <div class="content">
-                      <form id="contact" action="" method="post">
+                      <form id="contact" action="/contact" method="post">
+                        @csrf
                         <div class="row">
                           <div class="col-md-6 col-sm-12">
                             <fieldset>
                               <input name="name" type="text" id="name" placeholder="Your name" required="">
+                              @error('name')
+                            <p class="is-invalid">{{$message}}</p>
+                            @enderror
                             </fieldset>
                           </div>
                           <div class="col-md-6 col-sm-12">
                             <fieldset>
                               <input name="email" type="text" id="email" placeholder="Your email" required="">
                             </fieldset>
+                            @error('mail')
+                            <p class="is-invalid">{{$message}}</p>
+                            @enderror
+                          </div>
                           </div>
                           <div class="col-md-12 col-sm-12">
                             <fieldset>
                               <input name="subject" type="text" id="subject" placeholder="Subject">
+                              @error('subject')
+                            <p class="is-invalid">{{$message}}</p>
+                            @enderror
                             </fieldset>
                           </div>
                           <div class="col-lg-12">
                             <fieldset>
                               <textarea name="message" rows="6" id="message" placeholder="Your Message" required=""></textarea>
+                              @error('message')
+                            <p class="is-invalid">{{$message}}</p>
+                              @enderror
                             </fieldset>
                           </div>
+                          
                           <div class="col-lg-12">
                             <fieldset>
                               <button type="submit" id="form-submit" class="main-button">Send Message</button>
                             </fieldset>
                           </div>
+                          @if (session('message'))
+                          <div class="col-lg-12">
+                            <p class="is-valid">
+                              {{session('message')}}
+                            </p>
+                          </div>
+                          @endif
                         </div>
                       </form>
                     </div>
