@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMe;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -14,17 +15,17 @@ class ContactController extends Controller
         return view('contact');
     }
     public function store() {
-        request()->validate([
+        $request= request()->validate([
             'name' => 'required|min:3',
             'subject' => 'required|min:2',
             'message' => 'required|min:10' ,
             'email' => 'required|email'
         ]);
-        Mail::raw(request('message') , function($message){
-            $message->to(request('email'))
-                    ->subject(request('subject')) ;
-        });
-
+        // Mail::raw(request('message') , function($message){
+        //     $message->to(request('email'))
+        //             ->subject(request('subject')) ;
+        // });
+        Mail::to(request('email'))->send(new ContactMe($request));
 
         return redirect('/contact')->with('message' , 'success !');
     }
