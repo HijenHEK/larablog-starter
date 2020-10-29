@@ -29,10 +29,13 @@ use Illuminate\Support\Facades\Auth;
     
 // });
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/', [PostController::class, 'index']);
 
 Route::get('/posts/create', [PostController::class, 'create']);
 
@@ -60,7 +63,3 @@ Route::post('/notif', [ContactController::class, 'notif']);
 // Using string syntax...
 // Route::get('/users', 'App\Http\Controllers\UserController@index');
 
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

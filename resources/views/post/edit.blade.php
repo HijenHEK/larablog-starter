@@ -1,4 +1,4 @@
-@extends('layouts')
+@extends('layouts.app')
 
 
 @section('content')
@@ -24,7 +24,7 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="text-content">
-                <h2>New post mood ?</h2>
+                <h2>Edit post</h2>
               </div>
             </div>
           </div>
@@ -45,23 +45,25 @@
                 <div class="col-lg-12">
                   <div class="sidebar-item new-post-form">
                     <div class="sidebar-heading">
-                      <h2>Create a post</h2>
+                      <h2></h2>
                     </div>
                     <div class="content">
-                      <form id="newPost" action="/posts"  method="POST">
+                      <form id="newPost" action="/posts/{{$post->id}}"  method="POST">
+                        @method('PUT')
                         @csrf
                         <div class="mt-5" >
                           <div class=" form-group col-md-6 col-sm-12">
                             <fieldset>
 
-                            <input name="title" class="form-control {{ $errors->first('title') ? 'is-invalid' : '' }}" type="text" id="title" value="{{old('title')}}" >
+                            <input name="title" class="form-control {{ $errors->first('title') ? 'is-invalid' : '' }}" type="text" id="title" value="{{old('title') ? old('title') : $post->title}}" >
                             </fieldset>
                             <p class="text-danger">{{ $errors->first('title') }} </p>
 
                           </div>
                           <div class=" form-group col-md-6 col-sm-12">
                             <fieldset>
-                              <textarea name="body" class="form-control {{ $errors->first('body') ? 'is-invalid' : '' }}" cols="40" rows="10" value="{{old('body')}}" type="text" id="body" placeholder="write whats on your mind"  >
+                              <textarea name="body" class="form-control {{ $errors->first('body') ? 'is-invalid' : '' }}" cols="40" rows="10" value="" type="text" id="body" placeholder="write whats on your mind"  >
+                                {{old('body') ? old('body') : $post->body}}
                               </textarea>
                             </fieldset>
                             <p class="text-danger">{{ $errors->first('body') }} </p>
@@ -73,7 +75,7 @@
                               class="form-control selectpicker {{ $errors->first('tag') ? 'is-invalid' : '' }}" 
                               id="tags" multiple >
                                   @foreach ($tags as $tag)
-                                    <option value="{{$tag->id}}">
+                                    <option value="{{$tag->id}}" {{$post->tags()->find($tag->id) ? 'selected' : ''}}>
                                       {{$tag->name}}
                                     </option>
                                   @endforeach
@@ -82,11 +84,6 @@
                             </fieldset>
                             <p class="text-danger">{{ $errors->first('tag') }} </p>
 
-                          </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="btn btn-success">Post it !</button>
-                            </fieldset>
                           </div>
                           <div class="col-lg-12">
                             <fieldset>

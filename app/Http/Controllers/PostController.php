@@ -23,17 +23,17 @@ class PostController extends Controller
             $posts = Post::latest()->get() ;
 
         }
-        return view('index' , compact('posts' , 'latest'));
+        return view('blog.index' , compact('posts' , 'latest'));
     }
     public function show($id){
         $post = Post::findorfail($id);
-        return view('post-details' , compact('post'));
+        return view('post.show' , compact('post'));
     }
     
     public function create(){
         $tags = Tag::all() ;
         
-        return view('create' , compact('tags'));
+        return view('post.create' , compact('tags'));
     }
     public function store(){
         
@@ -61,7 +61,7 @@ class PostController extends Controller
     public function edit($id){
         $tags = Tag::all() ;
         $post = Post::findorfail($id);
-        return view('edit' , compact('post','tags'));
+        return view('post.edit' , compact('post','tags'));
     }
     
     public function update($id){
