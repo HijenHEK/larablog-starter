@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +48,7 @@ Route::get('/about', function(){
 
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact', [ContactController::class, 'store']);
+Route::post('/notif', [ContactController::class, 'notif']);
 
 
 
@@ -59,3 +60,7 @@ Route::post('/contact', [ContactController::class, 'store']);
 // Using string syntax...
 // Route::get('/users', 'App\Http\Controllers\UserController@index');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
