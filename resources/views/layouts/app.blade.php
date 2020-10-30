@@ -9,8 +9,6 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -84,6 +82,7 @@
             </div>
         </nav> --}}
         @include('layouts.partials.header')
+
         <main class="py-4">
             @yield('content')
         </main>
@@ -91,6 +90,8 @@
 
 
     </div>
+         {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+
 
         <!-- Bootstrap core JavaScript -->
         <script src="/vendor/jquery/jquery.min.js"></script>
