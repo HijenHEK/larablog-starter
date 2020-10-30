@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Post ;
 use App\Models\Tag;
 
@@ -49,6 +49,7 @@ class PostController extends Controller
         $p = new Post ;
         $p->title = request('title');
         $p->body = request('body');
+        $p->user_id = Auth::id();
         $p->save();
         $p->tags()->attach(request('tag'));
 
