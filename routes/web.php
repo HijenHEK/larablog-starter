@@ -20,22 +20,21 @@ use App\Http\Controllers\ContactController;
 
 //     $container->bind('example' , function(){
 //         return (new \App\Example);
-        
+
 //     });
 //     $e = $container->resolve('example');
 //     $e->display();
 
-    
-    
+
+
 // });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 
 Route::get('/posts', [PostController::class, 'index']);
+Route::get('/', [PostController::class, 'index']);
 
 Route::get('/posts/create', [PostController::class, 'create']);
 
@@ -46,7 +45,7 @@ Route::put('/posts/{post}', [PostController::class, 'update']);
 Route::delete('/posts/{post}', [PostController::class, 'destroy']);
 
 Route::get('/about', function(){
-    return view('about');
+    return view('blog.about');
 });
 
 Route::get('/contact', [ContactController::class, 'index']);

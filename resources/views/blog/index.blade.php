@@ -1,39 +1,13 @@
-
 @extends('layouts.app')
 
 @section('content')
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
 
-    <!-- Header -->
+@include('layouts.partials.preload')
 
-
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="heading-page header-text">
-      <section class="page-heading">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-content">
-                <h4>Recent Posts</h4>
-                <h2>Our Recent Blog Entries</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    
-    <!-- Banner Ends Here -->
-
+@include('layouts.partials.heading' , [
+'name' => 'RECENT POSTS' ,
+'heading' => 'OUR RECENT BLOG ENTRIES'
+])
 
     <section class="blog-posts grid-system">
       <div class="container">
@@ -43,21 +17,21 @@
               <div class="row">
                 @forelse($posts as $post)
                 <div class="col-lg-6">
-                  
-                      
+
+
                   <div class="blog-post">
                     <div class="blog-thumb">
                       <img src="assets/images/blog-thumb-01.jpg" alt="">
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
-                    <a href="posts/{{$post->id}}"><h4>{{$post->title}}</h4></a>
+                    <a href="posts/{{$post->id}}" title="{{$post->title}}"><h4>{{Str::limit($post->title, 30, ' ...')}}</h4></a>
                       <ul class="post-info">
                         <li><a href="#">Admin</a></li>
                         <li><a href="#">May 31, 2020</a></li>
                         <li><a href="#">12 Comments</a></li>
                       </ul>
-                    <p>{{$post->body}}</p>
+                     <p>   {{Str::limit($post->body, 30, ' ...')}}</p>
                       <div class="post-options">
                         <div class="row">
                           <div class="col-lg-12">
@@ -107,7 +81,7 @@
                     <div class="content">
                       <ul>
                         @foreach ($latest as $post)
-                            
+
                       <li><a href="posts/{{$post->id}}">
                           <h5>{{$post->title}}</h5>
                           <span>May 31, 2020</span>
@@ -162,28 +136,7 @@
       </div>
     </section>
 
-    
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="social-icons">
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Behance</a></li>
-              <li><a href="#">Linkedin</a></li>
-              <li><a href="#">Dribbble</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-12">
-            <div class="copyright-text">
-              <p>Copyright 2020 Stand Blog Co.
-                    
-                 | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+
+    @include('layouts.partials.footer')
 
 @endsection

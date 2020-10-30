@@ -1,45 +1,18 @@
-
 @extends('layouts.app')
-
 
 @section('content')
 
+@include('layouts.partials.preload')
 
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="heading-page header-text">
-      <section class="page-heading">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-content">
-                <h2>New post mood ?</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-    
-    <!-- Banner Ends Here -->
-
+@include('layouts.partials.heading' , [
+'name' => '' ,
+'heading' => 'New Post ?'
+])
 
     <section class="new-post-us">
       <div class="container mt-5">
         <div class="row">
-        
+
           <div class="col-lg-12">
             <div class="down-new-post">
               <div class="row">
@@ -71,7 +44,7 @@
                           <div class=" form-group col-md-6 col-sm-12">
                             <fieldset>
                               <select name="tag[]"  data-live-search="true"
-                              class="form-control selectpicker {{ $errors->first('tag') ? 'is-invalid' : '' }}" 
+                              class="form-control selectpicker {{ $errors->first('tag') ? 'is-invalid' : '' }}"
                               id="tags" multiple >
                                   @foreach ($tags as $tag)
                                     <option value="{{$tag->id}}">
@@ -115,7 +88,7 @@
                           <span>EMAIL ADDRESS</span>
                         </li>
                         <li>
-                          <h5>123 Aenean id posuere dui, 
+                          <h5>123 Aenean id posuere dui,
                           	<br>Praesent laoreet 10660</h5>
                           <span>STREET ADDRESS</span>
                         </li>
@@ -126,41 +99,19 @@
               </div>
             </div>
           </div>
-          
+
           {{-- <div class="col-lg-12">
             <div id="map">
               <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
           </div> --}}
-          
+
         </div>
       </div>
     </section>
 
-    
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="social-icons">
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Behance</a></li>
-              <li><a href="#">Linkedin</a></li>
-              <li><a href="#">Dribbble</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-12">
-            <div class="copyright-text">
-              <p>Copyright 2020 Stand Blog Co.
-                    
-                 | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
 
+    @include('layouts.partials.footer')
 
 
 

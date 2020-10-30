@@ -1,36 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
 
+@include('layouts.partials.preload')
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
-    <div class="heading-page header-text">
-      <section class="page-heading">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-content">
-                <h4>Post Details</h4>
-                <h2>{{$post->title}}</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-
+@include('layouts.partials.heading' , [
+'name' => 'Post' ,
+'heading' => $post->title
+])
 
     <section class="blog-posts grid-system">
       <div class="container">
@@ -58,7 +35,7 @@
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
                               @foreach ($post->tags as $tag)
-                                
+
                                 <li><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
 
                               @endforeach
@@ -239,28 +216,7 @@
       </div>
     </section>
 
-    
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <ul class="social-icons">
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Behance</a></li>
-              <li><a href="#">Linkedin</a></li>
-              <li><a href="#">Dribbble</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-12">
-            <div class="copyright-text">
-              <p>Copyright 2020 Stand Blog Co.
-                    
-                 | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+
+@include('layouts.partials.footer')
 
 @endsection

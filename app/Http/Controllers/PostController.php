@@ -13,7 +13,7 @@ class PostController extends Controller
 
 
     public function index(){
-        
+
         $latest = Post::latest()->take(3)->get() ;
 
         if(request('tag')) {
@@ -23,20 +23,21 @@ class PostController extends Controller
             $posts = Post::latest()->get() ;
 
         }
+
         return view('blog.index' , compact('posts' , 'latest'));
     }
     public function show($id){
         $post = Post::findorfail($id);
         return view('post.show' , compact('post'));
     }
-    
+
     public function create(){
         $tags = Tag::all() ;
-        
+
         return view('post.create' , compact('tags'));
     }
     public function store(){
-        
+
 
         request()->validate([
             'title' => 'required|min:5' ,
@@ -48,8 +49,8 @@ class PostController extends Controller
         $p = new Post ;
         $p->title = request('title');
         $p->body = request('body');
-        $p->tags()->attach(request('tag'));
         $p->save();
+        $p->tags()->attach(request('tag'));
 
         // $p = Post::create([
         //     'title' => request('title'),
@@ -63,9 +64,9 @@ class PostController extends Controller
         $post = Post::findorfail($id);
         return view('post.edit' , compact('post','tags'));
     }
-    
+
     public function update($id){
-        
+
 
         request()->validate([
             'title' => 'required|min:5' ,
@@ -73,14 +74,20 @@ class PostController extends Controller
             'tag' => 'required|exists:tags,id'
         ]);
 
+
+
+
         $p = Post::findorfail($id);
+        $tags = $p->tags()->get() ;
 
         $p->title = request('title');
         $p->body = request('body');
         $p->save();
+        $p->tags()->detach($tags);
+
         $p->tags()->attach(request('tag'));
 
-       
+
         return redirect("/posts/{$p->id}");
     }
 }
