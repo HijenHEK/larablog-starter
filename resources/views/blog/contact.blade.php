@@ -45,20 +45,7 @@
                     <div class="sidebar-heading">
                       <h2>Send us a message</h2>
                     </div>
-
                     <div class="content">
-                      <form id="contact" action="/notif" method="post">
-                        @csrf
-                        <div class="row">
-                          
-                          <div class="col-md-6 col-sm-12">
-                            <fieldset>
-                              <button type="submit" class="btn btn-primary">Notification</button>
-                            
-                            </fieldset>
-                          </div>
-                        </div>
-                      </form>
                       <form id="contact" action="/contact" method="post">
                         @csrf
                         <div class="row">
