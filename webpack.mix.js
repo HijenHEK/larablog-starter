@@ -11,7 +11,28 @@ const mix = require('laravel-mix');
  |
  */
 
+
+
 mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+        .sass('resources/sass/app.scss', 'public/css');
+
+
+
+
+mix.scripts([
+    'public/js/app.js',
+    'public/js/accordions.js',
+    'public/js/custom.js',
+    'public/js/isotope.js',
+    'public/js/owl.js',
+    'public/js/slick.js',
+
+    ], 'public/js/main.js');
+
+mix.styles([
+    'public/css/app.css',
+    'public/css/flex-slider.css',
+    'public/css/owl.css',
+    'public/css/fontawesome.css',
+    'public/css/template.css',
+    ], 'public/css/main.css');
