@@ -1,8 +1,6 @@
 {
-<<<<<<< HEAD
-    "/js/app.js": "/js/app.js"
-=======
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
->>>>>>> parent of 9633caf... mix
+    "/css/app.css": "/css/app.css",
+    "/js/main.js": "/js/main.js",
+    "/css/main.css": "/css/main.css"
 }
