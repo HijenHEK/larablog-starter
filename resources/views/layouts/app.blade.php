@@ -18,16 +18,10 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Stand Blog - Post Details</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title>Stand Blog</title>
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="/assets/css/templatemo-stand-blog.css">
-    <link rel="stylesheet" href="/assets/css/owl.css">
+
 </head>
 <body>
     <div id="app">
@@ -90,20 +84,9 @@
 
 
     </div>
-         {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+         <script src="{{ asset('js/main.js') }}" defer></script>
 
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="/vendor/jquery/jquery.min.js"></script>
-        <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-        <!-- Additional Scripts -->
-        <script src="/assets/js/custom.js"></script>
-        <script src="/assets/js/owl.js"></script>
-        <script src="/assets/js/slick.js"></script>
-        <script src="/assets/js/isotope.js"></script>
-        <script src="/assets/js/accordions.js"></script>
 
 
         <script language = "text/Javascript">
