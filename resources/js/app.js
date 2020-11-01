@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 require ('bootstrap');
 require ('./accordion.js') ;
 require ('./custom.js') ;
@@ -7,3 +8,6 @@ require ('./slick.js');
 
 
 
+=======
+require('./bootstrap');
+>>>>>>> parent of 9633caf... mix

@@ -11,9 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-
-
 mix.js('resources/js/app.js', 'public/js')
+<<<<<<< HEAD
         .sass('resources/sass/app.scss', 'public/css');
 
 
@@ -36,3 +35,8 @@ mix.js('resources/js/app.js', 'public/js')
 //     'public/css/fontawesome.css',
 //     'public/css/template.css',
 //     ], 'public/css/main.css');
+=======
+    .postCss('resources/css/app.css', 'public/css', [
+        //
+    ]);
+>>>>>>> parent of 9633caf... mix
