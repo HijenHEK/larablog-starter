@@ -15,7 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/template.css') }}" rel="stylesheet">
+     <link href="{{ asset('css/fontawesome.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
     <title>Stand Blog</title>
@@ -84,20 +86,12 @@
 
 
     </div>
-         <script src="{{ asset('js/main.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/custom.js') }}" defer></script>
 
 
 
 
-        <script language = "text/Javascript">
-          cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-          function clearField(t){                   //declaring the array outside of the
-          if(! cleared[t.id]){                      // function makes it static and global
-              cleared[t.id] = 1;  // you could use true and false, but that's more typing
-              t.value='';         // with more chance of typos
-              t.style.color='#fff';
-              }
-          }
-        </script>
+
 </body>
 </html>

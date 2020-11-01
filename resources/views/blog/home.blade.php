@@ -21,7 +21,7 @@
 
                   <div class="blog-post">
                     <div class="blog-thumb">
-                      <img src="assets/images/blog-thumb-01.jpg" alt="">
+                      <img src="images/blog-thumb-01.jpg" alt="">
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
