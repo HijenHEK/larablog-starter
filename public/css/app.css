@@ -10907,3 +10907,16 @@ a.text-dark:focus {
   margin-top: 100px;
 }
 
+.tag a {
+  border-radius: 5px;
+  padding: 4px 10px;
+  min-width: 30px;
+  color: white !important;
+  background-color: #f48840;
+}
+
+.tag a:hover {
+  color: #f48840 !important;
+  background-color: #eee;
+}
+

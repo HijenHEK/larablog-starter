@@ -27,8 +27,8 @@
                       <span>Lifestyle</span>
                     <a href="posts/{{$post->id}}" title="{{$post->title}}"><h4>{{Str::limit($post->title, 30, ' ...')}}</h4></a>
                       <ul class="post-info">
-                        <li><a href="#">Admin</a></li>
-                        <li><a href="#">May 31, 2020</a></li>
+                      <li><a href="/users/{{$post->user->id}}">{{$post->user->name}}</a></li>
+                        <li><a href="#">{{$post->created_at->diffForHumans()}}</a></li>
                         <li><a href="#">12 Comments</a></li>
                       </ul>
                      <p>   {{Str::limit($post->body, 30, ' ...')}}</p>
@@ -38,7 +38,7 @@
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
                               @foreach ($post->tags as $tag)
-                                <li><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
+                                <li class="tag"><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
 
                               @endforeach
                             </ul>

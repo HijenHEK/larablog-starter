@@ -23,7 +23,11 @@
             <li class="{{Request::is("contact") ? 'active nav-item' : ' nav-item'}}">
               <a class="nav-link"  href="/contact">Contact Us</a>
             </li>
-
+            @auth
+            <li class="{{Request::is("posts/create") ? 'active nav-item' : ' nav-item'}}">
+                <a class="nav-link"  href="/posts/create">New Post</a>
+            </li>
+            @endauth
                 <!-- Authentication Links -->
                 @guest
                     <li class="nav-item">

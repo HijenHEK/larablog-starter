@@ -62,11 +62,7 @@
                               <button type="submit" id="form-submit" class="btn btn-success">Post it !</button>
                             </fieldset>
                           </div>
-                          <div class="col-lg-12">
-                            <fieldset>
-                              <button type="submit" id="form-submit" class="btn btn-success">Post it !</button>
-                            </fieldset>
-                          </div>
+
                         </div>
                       </form>
                     </div>
