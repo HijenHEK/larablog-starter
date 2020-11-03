@@ -55,8 +55,8 @@
                                     @csrf
                                 </form>
 
-                                <a class="dropdown-item" href="{{ route('home') }}">
-                                {{ __('Dashboard') }}
+                                <a class="dropdown-item" href="/user/{{Auth::user()->id}}">
+                                {{ __('Profile') }}
                                 </a>
                         </div>
                     </li>

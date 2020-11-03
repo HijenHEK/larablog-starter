@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
@@ -51,13 +52,16 @@ Fortify::requestPasswordResetLinkView(function () {
     return view('auth.passwords.email');
 });
 
-Route::get('/home', function(){
-    return view('blog.home');
-})->name('home');
+
+Route::get('/', [BlogController::class, 'index']);
+
+Route::get('/user/{user}' , [BlogController::class, 'profile'])->name('profile');
+Route::get('/about', [BlogController::class, 'about']);
+Route::get('/contact', [BlogController::class, 'contact']);
+Route::post('/contact', [ContactController::class, 'store']);
 
 
 Route::get('/posts', [PostController::class, 'index']);
-Route::get('/', [PostController::class, 'index']);
 
 Route::get('/posts/create', [PostController::class, 'create'])->middleware('auth');
 
@@ -67,12 +71,6 @@ Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->middleware('a
 Route::put('/posts/{post}', [PostController::class, 'update'])->middleware('auth');
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware('auth');
 
-Route::get('/about', function(){
-    return view('blog.about');
-});
-
-Route::get('/contact', [ContactController::class, 'index']);
-Route::post('/contact', [ContactController::class, 'store']);
 
 
 

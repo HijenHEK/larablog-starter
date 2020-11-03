@@ -6,7 +6,7 @@
 
 @include('layouts.partials.heading' , [
 'name' => 'HOME' ,
-'heading' => Auth::user()->name
+'heading' => $user->name
 ])
 
     <section class="blog-posts grid-system">
@@ -15,8 +15,9 @@
           <div class="col-lg-8">
             <div class="all-blog-posts">
               <div class="row">
-                @forelse(Auth::user()->posts() as $post)
-                <div class="col-lg-6">
+
+                @forelse($posts as $post)
+                <div class="col-lg-8">
 
 
                   <div class="blog-post">
@@ -25,10 +26,10 @@
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
-                    <a href="posts/{{$post->id}}" title="{{$post->title}}"><h4>{{Str::limit($post->title, 30, ' ...')}}</h4></a>
+                    <a href="/posts/{{$post->id}}" title="{{$post->title}}"><h4>{{Str::limit($post->title, 30, ' ...')}}</h4></a>
                       <ul class="post-info">
-                        <li><a href="#">Admin</a></li>
-                        <li><a href="#">May 31, 2020</a></li>
+                      <li><a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></li>
+                        <li><a href="#">{{$post->created_at->diffForHumans()}}</a></li>
                         <li><a href="#">12 Comments</a></li>
                       </ul>
                      <p>   {{Str::limit($post->body, 30, ' ...')}}</p>
@@ -38,7 +39,7 @@
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
                               @foreach ($post->tags as $tag)
-                                <li><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
+                            <li class="tag"><a href="/user/{{$post->user->id}}?tag={{$tag->id}}">{{$tag->name}}</a></li>
 
                               @endforeach
                             </ul>
@@ -49,14 +50,23 @@
                   </div>
                 </div>
                 @empty
-                <div class="col-lg-6">
+                <div class="col-lg-8">
 
-                    <h4>no post yet !</h4>
+                    @if ($profile)
+
+                    <h4>you didnt share anything with us !</h4>
+
                     <div class="btn btn-success mt-3">
                         <a class="text-white" href="/posts/create">
                             Create One
                         </a>
                     </div>
+
+                    @else
+
+                    <h4>no post yet ! from {{$user->name}}</h4>
+
+                    @endif
 
                 </div>
                 @endforelse

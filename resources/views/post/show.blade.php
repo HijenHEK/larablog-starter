@@ -24,7 +24,7 @@
                       <span>Lifestyle</span>
                     <a href="/posts/{{$post->id}}"><h4>{{$post->title}}</h4></a>
                       <ul class="post-info">
-                        <li><a href="#">Admin</a></li>
+                      <li><a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></li>
                         <li><a href="#">May 12, 2020</a></li>
                         <li><a href="#">10 Comments</a></li>
                       </ul>

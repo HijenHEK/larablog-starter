@@ -25,9 +25,9 @@
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
-                    <a href="posts/{{$post->id}}" title="{{$post->title}}"><h4>{{Str::limit($post->title, 30, ' ...')}}</h4></a>
+                    <a href="/posts/{{$post->id}}" title="{{$post->title}}"><h4>{{Str::limit($post->title, 30, ' ...')}}</h4></a>
                       <ul class="post-info">
-                      <li><a href="/users/{{$post->user->id}}">{{$post->user->name}}</a></li>
+                      <li><a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></li>
                         <li><a href="#">{{$post->created_at->diffForHumans()}}</a></li>
                         <li><a href="#">12 Comments</a></li>
                       </ul>

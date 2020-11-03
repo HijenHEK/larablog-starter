@@ -10,10 +10,7 @@ class ContactController extends Controller
 {
     //
 
-    public function index()
-    {
-        return view('blog.contact');
-    }
+
     public function store() {
         $request= request()->validate([
             'name' => 'required|min:3',
