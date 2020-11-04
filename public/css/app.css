@@ -10920,3 +10920,15 @@ a.text-dark:focus {
   background-color: #eee;
 }
 
+.notif {
+  width: 100%;
+  padding: 10px;
+  margin: 2px;
+  background: #eee;
+}
+
+.notif.read {
+  background: rgba(172, 172, 172, 0.644);
+  margin: 2px;
+}
+

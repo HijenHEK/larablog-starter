@@ -4,7 +4,7 @@ use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\NotifController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,7 +72,8 @@ Route::put('/posts/{post}', [PostController::class, 'update'])->middleware('auth
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware('auth');
 
 
-Route::post('/notify' ,  [ContactController::class, 'notify']);
+Route::post('/notify' ,  [NotifController::class, 'store']);
+Route::get('/notify' ,  [NotifController::class, 'index']);
 
 
 

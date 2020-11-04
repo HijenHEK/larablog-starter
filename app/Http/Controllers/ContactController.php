@@ -29,11 +29,5 @@ class ContactController extends Controller
         return redirect('/contact')->with('message' , 'success !');
     }
 
-    public function notify() {
 
-        request()->user()->notify(new PaymentReceived);
-        // Notification::send(request()->user() , new PaymentReceived);
-        return back()->with('message' , 'success !');
-
-    }
 }
