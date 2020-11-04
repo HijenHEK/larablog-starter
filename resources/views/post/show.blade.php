@@ -141,6 +141,14 @@
               </div>
             </div>
           </div>
+
+
+          <div class="col-lg-4">
+              <form action="/notify" method="post">
+                @csrf
+                <button class="btn btn-success" type="submit">notify !</button>
+            </form>
+          </div>
           {{-- <div class="col-lg-4">
             <div class="sidebar">
               <div class="row">

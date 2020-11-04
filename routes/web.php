@@ -72,7 +72,7 @@ Route::put('/posts/{post}', [PostController::class, 'update'])->middleware('auth
 Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware('auth');
 
 
-
+Route::post('/notify' ,  [ContactController::class, 'notify']);
 
 
 
