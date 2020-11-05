@@ -21,7 +21,6 @@ class PostController extends Controller
             $posts = $tag->posts ?? [] ;
         }else {
             $posts = Post::latest()->get() ;
-
         }
 
         return view('blog.index' , compact('posts' , 'latest'));
