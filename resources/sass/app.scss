@@ -1,39 +1,65 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.mt-10 {
-    margin-top: 100px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-.tag a{
-    border-radius: 5px;
-    padding: 4px 10px;
-    min-width: 30px;
-    color: white !important;
-    background-color: #f48840;
+body {
+    font-family: 'Nunito', Arial, Helvetica, sans-serif;
 }
-
-.tag a:hover{
-
-    color: #f48840  !important;
-    background-color: #eee;
+a {
+    color: inherit;
+    text-decoration: none;
 }
-
-
-.notif {
+ul li {
+    list-style: none;
+}
+.header {
     width: 100%;
-    padding: 10px;
-    margin: 2px;
-    background : #eee;
-}
-.notif.read {
-    background : rgba(172, 172, 172, 0.644);
-    margin: 2px;
+    padding:0.5rem 2rem;
+    background-color: rgb(24, 24, 24);
+    color : rgb(255, 255, 255);
+    .brand {
+        font-size: large;
 
+    }
 }
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: medium;
+    .nav-bar{
+        color : rgb(165, 165, 165);
+
+        display: flex;
+        align-items: center;
+        .nav-items{
+            display: flex;
+            align-items: center;
+            .nav-item {
+
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+            .nav-item:hover {
+                color : rgb(255, 255, 255);
+                font-weight: 700;
+                transition: all 0 0.2s ease-in;
+
+
+            }
+            .active {
+                color : rgb(255, 255, 255);
+                font-weight: 700;
+            }
+
+        }
+
+    }
+}
+
