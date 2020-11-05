@@ -7,7 +7,9 @@
     box-sizing: border-box;
 }
 body {
+    margin-top: 5rem;
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
+    position: relative;
 }
 a {
     color: inherit;
@@ -21,6 +23,9 @@ ul li {
     padding:0.5rem 2rem;
     background-color: rgb(24, 24, 24);
     color : rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+
     .brand {
         font-size: large;
 
@@ -28,6 +33,10 @@ ul li {
 }
 
 .nav {
+    .right {
+        display: flex;
+        align-items: center;
+    }
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -38,6 +47,13 @@ ul li {
 
         display: flex;
         align-items: center;
+        .toggler {
+            display: none;
+            padding: 10px 15px;
+                cursor: pointer;
+                color : rgb(255, 255, 255);
+
+        }
         .nav-items{
             display: flex;
             align-items: center;
@@ -51,8 +67,8 @@ ul li {
                 font-weight: 700;
                 transition: all 0 0.2s ease-in;
 
-
             }
+
             .active {
                 color : rgb(255, 255, 255);
                 font-weight: 700;
@@ -60,6 +76,128 @@ ul li {
 
         }
 
+    }
+    .drop {
+        background-color : rgb(36, 36, 36);
+
+        .drop-toggler {
+            padding: 15px;
+
+            font-weight: 500;
+            color: white;
+            background-color: rgb(24, 24, 24);
+            box-shadow: 0 0 2px 0px  rgb(24, 24, 24);;
+            i {
+                margin-right: 0.2rem;
+            }
+        }
+        .drop-menu {
+            background-color : rgb(36, 36, 36);
+
+            position : absolute ;
+            display: flex;
+            flex-direction: column;
+            top : 100% ;
+            opacity: 0;
+            right: -12.5rem;
+            transition: all 0.1s 0.2s ease-in-out;
+            .drop-item {
+                color :rgb(255, 255, 255);
+                padding: 10px 20px;
+                cursor: pointer;
+                font-weight: 700;
+
+            }
+            .drop-item:hover {
+                background-color: rgb(95, 95, 95);
+                transition: all 0 0.2s ease-in;
+
+            }
+        }
+        .drop-active {
+            opacity: 1;
+            transform: translateX(-15rem);
+            transition: transform 0s 0.4s ease-in-out ;
+            transition: opacity 0.3s 0.2s ease-in-out ;
+        }
+    }
+}
+
+
+
+
+@media(max-width : 720px) {
+    .nav {
+        .right {
+            flex-direction: row-reverse;
+        }
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: medium;
+        .nav-bar{
+            color : rgb(165, 165, 165);
+            display: flex;
+            align-items: center;
+            .toggler {
+                display: block;
+            }
+            .nav-items{
+                position: absolute;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                background-color: rgb(24, 24, 24);
+                right: -10rem;
+                top: 100%;
+
+                transition: all 0.3s 0.2s ease-in-out ;
+
+                .nav-item {
+
+                    padding: 10px 25px;
+                    cursor: pointer;
+                }
+                .nav-item:hover {
+                    color : rgb(255, 255, 255);
+                    font-weight: 700;
+                    transition: all 0 0.2s ease-in;
+
+                }
+                .active {
+                    color : rgb(255, 255, 255);
+                    font-weight: 700;
+                }
+            }
+            .menu-active {
+                opacity: 1;
+                transform: translateX(-10rem);
+                transition: transform 0s 0.4s ease-in-out ;
+                transition: opacity 0.3s 0.2s ease-in-out ;
+
+            }
+
+        }
+    }
+    .drop {
+
+
+        .drop-menu {
+
+            right: -10rem !important;
+            background-color: rgb(165, 165, 165);
+            .drop-item {
+
+                padding: 10px 15px;
+                cursor: pointer;
+                font-weight: 700;
+
+            }
+            .drop-item:hover {
+                transition: all 0 0.2s ease-in;
+            }
+        }
     }
 }
 
