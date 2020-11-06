@@ -14,7 +14,7 @@ class BlogController extends Controller
 
     public function index(){
 
-        $latest = Post::latest()->take(3)->get() ;
+        $tags = Tag::all() ;
 
         if(request('tag')) {
             $tag = Tag::find(request('tag'));
@@ -24,7 +24,7 @@ class BlogController extends Controller
 
         }
 
-        return view('blog.index' , compact('posts' , 'latest'));
+        return view('blog.index' , compact('posts' , 'tags'));
     }
     public function about() {
         return view('blog.about');

@@ -26,3 +26,19 @@ $('main').on('click' , ()=>{
     $('.drop-menu').removeClass('drop-active');
 
 });
+
+
+
+var prevScrollpos = window.pageYOffset ;
+
+
+window.onscroll = ()=>{
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+        $(".header").removeClass('hide');
+
+    } else {
+        $(".header").addClass('hide');
+    }
+    prevScrollpos = currentScrollPos;
+}

@@ -1,4 +1,4 @@
-<header class="header">
+<header  class="header">
     <nav class="nav">
         <a class="brand" href="/">
             <h2>THE LOG</h2>

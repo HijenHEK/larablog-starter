@@ -11000,6 +11000,19 @@ $('main').on('click', function () {
   $('.nav-items').removeClass('menu-active');
   $('.drop-menu').removeClass('drop-active');
 });
+var prevScrollpos = window.pageYOffset;
+
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+
+  if (prevScrollpos > currentScrollPos) {
+    $(".header").removeClass('hide');
+  } else {
+    $(".header").addClass('hide');
+  }
+
+  prevScrollpos = currentScrollPos;
+};
 
 /***/ }),
 

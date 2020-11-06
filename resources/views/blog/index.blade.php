@@ -5,8 +5,8 @@
 @include('layouts.partials.preload')
 
 @include('layouts.partials.heading' , [
-'name' => 'RECENT POSTS' ,
-'heading' => 'OUR RECENT BLOG ENTRIES'
+'name' => 'LOG' ,
+'heading' => 'OUR RECENT LOGS'
 ])
 
 
@@ -17,17 +17,17 @@
 
 
                     <div class="post">
-                        <div class="thumb">
+                        {{-- <div class="thumb">
                            <a href="/posts/{{$post->id}}">
                                 <img src="images/blog-thumb-01.jpg" alt="">
 
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="content">
 
                             {{-- <span class="cat">Lifestyle</span> --}}
                             <a class="title" href="/posts/{{$post->id}}" title="{{$post->title}}">
-                                <h4>{{Str::limit($post->title, 30, ' ...')}}</h4>
+                                <h4>{{Str::limit($post->title, 60, ' ...')}}</h4>
                             </a>
                             <ul class="info">
                                 <li><a class="name" href="/user/{{$post->user->id}}" title="{{$post->user->name}}">{{Str::limit($post->user->name , 14, ' ..')}}</a></li>
@@ -68,22 +68,18 @@
                                 autocomplete="on">
                             <button class="fa fa-search fa-lg" type="submit"></button>
                         </form>
-                    <div class="item recent">
+                    <div class="item tag-list">
                         <div class="heading">
-                            <h2>Recent Posts</h2>
+                            <i class="fa fa-tags"></i>
+
+                            <h2>Tags</h2>
                         </div>
                         <div class="content">
-                            <ul>
-                                @foreach ($latest as $post)
+                            <ul class="tags">
+                                @foreach ($tags as $tag)
+                                <li class="tag"><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
 
-                                <li><a href="posts/{{$post->id}}">
-                                        <h5>{{$post->title}}</h5>
-                                        <span>May 31, 2020</span>
-                                    </a>
-                                </li>
                                 @endforeach
-
-                                </li>
                             </ul>
                         </div>
                     </div>

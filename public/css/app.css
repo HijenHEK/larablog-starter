@@ -26,10 +26,16 @@ ul li {
   color: white;
   position: fixed;
   top: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 .header .brand {
   font-size: large;
+}
+
+.hide {
+  transform: translateY(-100%);
+  transition: all 0.3s 0.3s ease-in-out;
 }
 
 .nav {
@@ -182,13 +188,26 @@ footer .container .copyright-text {
 }
 
 .main .sidebar {
-  padding: 1rem;
+  padding: 0.5rem;
   flex: 0.25;
 }
 
 .main .sidebar .item {
   margin: 1rem 0;
   width: 100%;
+}
+
+.main .sidebar .tag-list {
+  padding: 1rem;
+}
+
+.main .sidebar .tag-list .heading {
+  margin: 1rem 0;
+  display: flex;
+}
+
+.main .sidebar .tag-list .heading .fa {
+  margin-right: 1rem;
 }
 
 .main .sidebar .recent .heading {
@@ -216,7 +235,7 @@ footer .container .copyright-text {
 
 .search {
   display: flex;
-  background-color: #acacac;
+  background-color: lightgray;
   padding: 0.5rem 1rem;
   align-items: center;
   justify-content: stretch;
@@ -252,9 +271,8 @@ footer .container .copyright-text {
 .post {
   border-radius: 5px;
   margin: 0.5rem;
-  flex: 1 1 auto;
-  max-width: 300px;
-  min-width: 250px;
+  width: 300px;
+  height: 200px;
   background-color: white;
   box-shadow: 0 0 3px 2px #bdbdbd;
 }
@@ -272,6 +290,10 @@ footer .container .copyright-text {
 
 .post .content {
   padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .post .content .cat {
@@ -289,6 +311,7 @@ footer .container .copyright-text {
   font-weight: 400;
   padding: 0.5rem 0;
   word-break: break-all;
+  flex: 0.3;
 }
 
 .post .content .info {
@@ -298,27 +321,7 @@ footer .container .copyright-text {
   font-size: 0.8rem;
   opacity: 0.8;
   align-items: center;
-}
-
-.post .content .tags {
-  display: flex;
-  align-items: center;
-}
-
-.post .content .tags > *:not(:last-child) {
-  margin-right: 0.2rem;
-}
-
-.post .content .tags .tag {
-  color: white;
-  background-color: #dc812c;
-  border-radius: 5px;
-  padding: 0.2rem 0.5rem;
-}
-
-.post .content .tags .fa {
-  color: #dc812c;
-  margin-right: 0.5rem;
+  flex: 0.1;
 }
 
 .post .content .info > *:not(:last-child) {
@@ -332,6 +335,29 @@ footer .container .copyright-text {
 
 .post .content .body {
   margin: 0.5rem 0;
+  flex: 0.5;
+}
+
+.tags {
+  flex: 0.1;
+  display: flex;
+  align-items: center;
+}
+
+.tags > *:not(:last-child) {
+  margin-right: 0.2rem;
+}
+
+.tags .tag {
+  color: white;
+  background-color: #dc812c;
+  border-radius: 5px;
+  padding: 0.2rem 0.5rem;
+}
+
+.tags .fa {
+  color: #dc812c;
+  margin-right: 0.5rem;
 }
 
 @media (max-width: 720px) {
