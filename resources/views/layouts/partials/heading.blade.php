@@ -1,14 +1,4 @@
-<div class="heading-page header-text">
-    <section class="page-heading">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="text-content">
+<div class="page-heading">
               <h4>{{$name}}</h4>
               <h2>{{$heading}}</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </div>

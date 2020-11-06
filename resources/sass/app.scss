@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 body {
-    margin-top: 5rem ;
+
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
     position: relative;
     background-color: rgb(250, 250, 250);
@@ -78,7 +78,7 @@ ul li {
 
     }
     .drop {
-        background-color : rgb(36, 36, 36);
+        background-color: rgb(24, 24, 24);
 
         .drop-toggler {
             padding: 15px;
@@ -161,6 +161,14 @@ footer {
 
 }
 
+
+.page-heading {
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    padding: 7rem 2rem 4rem 2rem;
+
+}
 
 .main {
     display: flex;
@@ -343,14 +351,14 @@ footer {
                 opacity: 0;
                 display: flex;
                 flex-direction: column;
-                background-color: rgb(24, 24, 24);
+                background-color: rgb(36, 36, 36);
                 right: -10rem;
                 top: 100%;
 
                 transition: all 0.3s 0.2s ease-in-out ;
 
                 .nav-item {
-
+                    width: 100%;
                     padding: 10px 25px;
                     cursor: pointer;
                 }
@@ -358,6 +366,7 @@ footer {
                     color : rgb(255, 255, 255);
                     font-weight: 700;
                     transition: all 0 0.2s ease-in;
+                    background-color: rgb(123, 123, 123);
 
                 }
                 .active {
