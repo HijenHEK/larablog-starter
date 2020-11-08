@@ -56,7 +56,7 @@ Fortify::requestPasswordResetLinkView(function () {
 Route::get('/', [BlogController::class, 'index']);
 
 Route::get('/user/{user}' , [BlogController::class, 'profile'])->name('profile');
-Route::get('/about', [BlogController::class, 'about']);
+// Route::get('/about', [BlogController::class, 'about']);
 Route::get('/contact', [BlogController::class, 'contact']);
 Route::post('/contact', [ContactController::class, 'store']);
 

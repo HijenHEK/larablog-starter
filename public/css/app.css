@@ -627,6 +627,7 @@ footer .container .copyright-text {
   flex: 0.1;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .tags > *:not(:last-child) {
@@ -638,6 +639,7 @@ footer .container .copyright-text {
   background-color: #dc812c;
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
+  margin: 0.3rem 0.2rem;
 }
 
 .tags .fa {

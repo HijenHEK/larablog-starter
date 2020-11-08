@@ -23,9 +23,9 @@
 
                         <a class="nav-link" href="/posts">Blog</a>
                     </li>
-                    <li class="nav-item {{Request::is("about") ? 'active' : ''}}">
+                    {{-- <li class="nav-item {{Request::is("about") ? 'active' : ''}}">
                         <a class="nav-link" href="/about">About Us</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item {{Request::is("contact") ? 'active' : ''}}">
                         <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
@@ -60,6 +60,12 @@
                 </a>
 
                 <div class="drop-menu" >
+                    <a class="drop-item" href="/user/{{Auth::user()->id}}">
+                        {{ __('Profile') }}
+                    </a>
+                    <a class="drop-item" href="/notify">
+                        {{ __('Notifications') }}
+                    </a>
                     <a class="drop-item " href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
@@ -68,12 +74,8 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                    <a class="drop-item" href="/notify">
-                        {{ __('Notifications') }}
-                    </a>
-                    <a class="drop-item" href="/user/{{Auth::user()->id}}">
-                        {{ __('Profile') }}
-                    </a>
+
+
                 </div>
             </div>
             @endauth
