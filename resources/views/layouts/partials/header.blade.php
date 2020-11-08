@@ -29,11 +29,11 @@
                     <li class="nav-item {{Request::is("contact") ? 'active' : ''}}">
                         <a class="nav-link" href="/contact">Contact Us</a>
                     </li>
-                    @auth
+                    @can('create_post')
                     <li class="nav-item  {{Request::is("posts/create") ? 'active' : ''}}">
                         <a class="nav-link" href="/posts/create">New Post</a>
                     </li>
-                    @endauth
+                    @endcan
                     <!-- Authentication Links -->
                     @guest
                     <li class="nav-item {{Request::is("login") ? 'active' : ''}}">
@@ -56,7 +56,7 @@
             <div class="drop">
                 <a id="drop" class="drop-toggler"  onclick="toggleDrop()" href="#" role="button">
                     <i class="fa fa-user"></i>
-                    {{ Auth::user()->name }}
+                    {{ Auth::user()->name }}  <small>#{{Auth::user()->role()}}</small>
                 </a>
 
                 <div class="drop-menu" >

@@ -49,12 +49,24 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany(Role::class);
     }
-
+    public function role(){
+        return $this->roles()->first()->name ;
+    }
     public function assignRole($role) {
         if(is_string($role)){
             $role = Role::whereName($role)->firstOrFail();
         }
         $this->roles()->syncWithoutDetaching($role);
+
+    }
+    public function denyRole($role) {
+        if(is_string($role)){
+            $role = Role::whereName($role)->firstOrFail();
+        }
+        $this->roles()->detach($role);
+        if(!$this->role()){
+            $this->assignRole('guest');
+        }
     }
     public function abilities(){
         return $this->roles->map->abilities->flatten()->pluck('name')->unique();
