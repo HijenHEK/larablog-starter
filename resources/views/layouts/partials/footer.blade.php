@@ -10,7 +10,7 @@
         <div class="copyright-text">
             <p>Copyright 2020 Stand Blog Co.
 
-                | Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a>
+                <br> Design: <a rel="nofollow" href="https://templatemo.com" target="_parent">TemplateMo</a>
             </p>
         </div>
 

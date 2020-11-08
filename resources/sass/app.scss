@@ -204,7 +204,7 @@ ul li {
     align-items: center;
     padding: 2rem;
     .contact-section {
-        flex: 0.8;
+        flex: 0.6;
         width: 100%;
         .head {
             margin: 1rem 0;
@@ -255,7 +255,9 @@ ul li {
         }
     }
     .info-sidebar {
+        flex: 0.4;
         margin: 1rem 0;
+        padding: 2rem;
         .head {
             margin-bottom: 1rem;
         }
@@ -399,6 +401,8 @@ footer {
         .nav-items{
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             .nav-item {
                 color : rgb(255, 255, 255);
 
@@ -415,6 +419,7 @@ footer {
 
         }
         .copyright-text{
+            text-align: center;
             color : rgba(255, 255, 255, 0.72);
 
         }
@@ -523,9 +528,11 @@ footer {
 .post {
     border-radius: 5px;
     margin: 0.5rem;
-
-    width: 300px;
-    height: 200px;
+    flex: 1 1 28%;
+    min-width: 250px;
+    max-width: 500px;
+    overflow: hidden;
+    max-height: 250px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0 0 3px 2px rgb(189, 189, 189);
 
@@ -613,6 +620,32 @@ footer {
         margin-right: 0.5rem;
     }
 }
+
+
+@media(min-width: 720px ) {
+    @media( max-width : 850px) {
+        .info-sidebar {
+
+            .content {
+                ul {
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 0.5rem 0;
+                        &>*:first-child{
+                            margin-right: 1rem;
+                        }
+                        &>*:last-child{
+                            color: rgb(0, 113, 199);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
 @media(max-width : 720px) {
     .nav {
         .right {
