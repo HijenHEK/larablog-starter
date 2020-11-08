@@ -4,7 +4,6 @@
 <div class="container centerized">
 
     <div class="card centerized">
-                <div class="head">{{ __('Register') }}</div>
 
                 <div class="body">
                     <form method="POST" action="{{ route('register') }}">

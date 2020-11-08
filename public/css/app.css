@@ -130,6 +130,11 @@ ul li {
 
 .card .body form .group a {
   margin-top: 1rem;
+  color: rgba(150, 150, 255, 0.44);
+}
+
+.card .body form .group a:hover {
+  color: rgba(150, 150, 255, 0.8);
 }
 
 .contact-us {
