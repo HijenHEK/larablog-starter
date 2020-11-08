@@ -137,6 +137,86 @@ ul li {
   color: rgba(150, 150, 255, 0.8);
 }
 
+.show-post {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-post .sidebar {
+  flex: 0.2;
+  padding: 1rem;
+}
+
+.show-post .sidebar .btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #3030df;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.show-post .content {
+  flex: 0.8;
+  padding: 1rem;
+}
+
+.show-post .content .one-post .thumb {
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.show-post .content .one-post .thumb img {
+  width: 100%;
+}
+
+.show-post .content .one-post .content h2 {
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.show-post .content .one-post .content .info {
+  display: flex;
+}
+
+.show-post .content .one-post .content .info li {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.show-post .content .one-post .content .info li:hover {
+  opacity: 0.95;
+}
+
+.show-post .content .one-post .content .info li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.show-post .content .one-post .content p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.show-post .content .one-post .content .options {
+  margin-top: 1rem;
+}
+
+.show-post .content .one-post .content .options .share {
+  margin-top: 1rem;
+  display: flex;
+}
+
+.show-post .content .one-post .content .options .share li:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.show-post .content .one-post .content .options .share .fa,
+.show-post .content .one-post .content .options .share li:hover {
+  color: #dc812c;
+}
+
 .contact-us {
   display: flex;
   justify-content: space-between;

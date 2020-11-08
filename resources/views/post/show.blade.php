@@ -9,50 +9,38 @@
 'heading' => $post->title
 ])
 
-    <section class="blog-posts grid-system">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="all-blog-posts">
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="blog-post">
-                    <div class="blog-thumb">
-                      <img src="images/blog-post-02.jpg" alt="">
+    <section class="show-post">
+        <div class="content">
+
+                  <div class="one-post">
+                    <div class="thumb">
+                      <img src="images/blog-post-01.jpg" alt="">
                     </div>
-                    <div class="down-content">
-                      <span>Lifestyle</span>
-                    <a href="/posts/{{$post->id}}"><h4>{{$post->title}}</h4></a>
-                      <ul class="post-info">
+                    <div class="content">
+                    <a href="/posts/{{$post->id}}"><h2>{{$post->title}}</h2></a>
+                      <ul class="info">
                       <li><a href="/user/{{$post->user->id}}">{{$post->user->name}}</a></li>
                         <li><a href="#">May 12, 2020</a></li>
                         <li><a href="#">10 Comments</a></li>
                       </ul>
                       <p>{{$post->body}}</p>
-                      <div class="post-options">
-                        <div class="row">
-                          <div class="col-6">
-                            <ul class="post-tags">
+                      <div class="options">
+                            <ul class="tags">
                               <li><i class="fa fa-tags"></i></li>
                               @foreach ($post->tags as $tag)
 
-                                <li><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
+                                <li class="tag"><a href="/posts?tag={{$tag->id}}">{{$tag->name}}</a></li>
 
                               @endforeach
                             </ul>
-                          </div>
-                          <div class="col-6">
-                            <ul class="post-share">
+                            <ul class="share">
                               <li><i class="fa fa-share-alt"></i></li>
                               <li><a href="#">Facebook</a>,</li>
                               <li><a href="#"> Twitter</a></li>
                             </ul>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 <div class="col-lg-12">
                   {{-- <div class="sidebar-item comments">
                     <div class="sidebar-heading">
@@ -138,15 +126,14 @@
                     </div>
                   </div> --}}
                 </div>
-              </div>
-            </div>
-          </div>
+        </div>
 
 
-          <div class="col-lg-4">
+
+          <div class="sidebar">
               <form action="/notify" method="post">
                 @csrf
-                <button class="btn btn-success" type="submit">notify !</button>
+                <button class="btn" type="submit">notify !</button>
             </form>
           </div>
           {{-- <div class="col-lg-4">
@@ -220,8 +207,6 @@
               </div>
             </div>
           </div> --}}
-        </div>
-      </div>
     </section>
 
 

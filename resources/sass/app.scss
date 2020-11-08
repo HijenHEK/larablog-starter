@@ -127,6 +127,79 @@ ul li {
 
 }
 
+
+
+.show-post {
+    display: flex;
+    justify-content: space-around;
+    .sidebar {
+        flex: 0.2;
+        padding: 1rem;
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            background-color: rgb(48, 48, 223);
+            color: white;
+            font-weight: 500;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+    .content {
+        flex: 0.8;
+        padding: 1rem;
+        .one-post {
+            .thumb {
+                width: 100%;
+                max-height: 200px ;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                }
+
+            }
+            .content {
+                h2 {
+                    margin-bottom: 0.5rem;
+                    font-size: 2rem;
+                }
+                .info {
+                    display: flex;
+                    li {
+                        opacity: 0.7;
+                        font-size: 0.8rem;
+                    }
+                    li:hover {
+                        opacity: 0.95;
+                    }
+                    li:not(:last-child) {
+                        margin-right: 1rem;
+
+                    }
+
+                }
+                p {
+                    margin: 1rem 0;
+                    font-size: 1.2rem;
+                }
+                .options {
+                    margin-top: 1rem;
+                    .share {
+                        margin-top: 1rem;
+                        display: flex;
+                        li:not(:last-child) {
+                            margin-right: 1rem;
+                        }
+                        .fa , li:hover {
+                            color: rgb(220, 129, 44);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .contact-us {
     display: flex;
     justify-content: space-between;
