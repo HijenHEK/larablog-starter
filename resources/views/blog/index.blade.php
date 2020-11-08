@@ -13,9 +13,6 @@
 <div class="main">
         <div class="posts">
                 @forelse($posts as $post)
-                <div class="col-lg-6">
-
-
                     <div class="post">
                         {{-- <div class="thumb">
                            <a href="/posts/{{$post->id}}">
@@ -48,7 +45,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
                 @empty
                 <h4>no post yet with that tag !</h4>
                 @endforelse

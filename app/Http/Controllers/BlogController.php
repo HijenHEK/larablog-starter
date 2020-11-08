@@ -34,17 +34,19 @@ class BlogController extends Controller
     }
     public function profile(User $user) {
 
+        $tags = Tag::all() ;
 
         $profile = false ;
         if(Auth::check() && Auth::user() == $user) {
             $profile = true ;
         }
+
         $posts = $user->posts ;
         if(request('tag')) {
             $tag = Tag::find(request('tag'));
             $posts = $tag->posts()->where('user_id' , '=' , $user->id)->get() ?? [] ;
         }
 
-        return view('blog.home' , compact('user','profile','posts'));
+        return view('blog.home' , compact('user','profile','posts','tags'));
     }
 }
