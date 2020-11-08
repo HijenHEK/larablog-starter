@@ -68,8 +68,8 @@
                         </div>
 
                         <div class="group">
-                            <div class="row ">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col ">
+                                <button type="submit" class="btn">
                                     {{ __('Register') }}
                                 </button>
                             </div>

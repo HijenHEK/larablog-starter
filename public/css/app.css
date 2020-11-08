@@ -5,6 +5,7 @@
 }
 
 body {
+  overflow-x: hidden;
   font-family: "Nunito", Arial, Helvetica, sans-serif;
   position: relative;
   background-color: #fafafa;
@@ -120,6 +121,7 @@ ul li {
   background-color: #e8f0fe;
   border: none;
   border-radius: 5px;
+  margin: 0 auto;
   cursor: pointer;
   box-shadow: 0px 0px 1px 1px #e8f0fe;
   font-size: 1rem;
@@ -128,6 +130,87 @@ ul li {
 
 .card .body form .group a {
   margin-top: 1rem;
+}
+
+.contact-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.contact-us .contact-section {
+  flex: 0.8;
+  width: 100%;
+}
+
+.contact-us .contact-section .head {
+  margin: 1rem 0;
+}
+
+.contact-us .contact-section .content form .row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.contact-us .contact-section .content form .row > *:first-child {
+  margin-right: 2rem;
+}
+
+.contact-us .contact-section .content form .group {
+  width: 100%;
+}
+
+.contact-us .contact-section .content form .group .control {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border: none;
+  outline: none;
+  background-color: #e6e6e6;
+  width: 100%;
+}
+
+.contact-us .contact-section .content form .group .is-invalid {
+  color: #ff5050;
+}
+
+.contact-us .contact-section .content form textarea {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  border: none;
+  outline: none;
+  background-color: #e6e6e6;
+}
+
+.contact-us .contact-section .content form .btn {
+  border: none;
+  background-color: #181818;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+}
+
+.contact-us .info-sidebar {
+  margin: 1rem 0;
+}
+
+.contact-us .info-sidebar .head {
+  margin-bottom: 1rem;
+}
+
+.contact-us .info-sidebar .content ul li {
+  margin: 0.5rem 0;
+}
+
+.contact-us .info-sidebar .content ul li > *:first-child {
+  margin-right: 1rem;
+}
+
+.contact-us .info-sidebar .content ul li > *:last-child {
+  color: #0071c7;
 }
 
 .header {
@@ -551,6 +634,29 @@ footer .container .copyright-text {
 
   .sidebar .recent {
     display: none;
+  }
+
+  .contact-us {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-us .contact-section {
+    flex: 1;
+    width: 100%;
+  }
+
+  .contact-us .contact-section .head {
+    margin: 1rem 0;
+  }
+
+  .contact-us .contact-section .content form .row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact-us .contact-section .content form .row > *:first-child {
+    margin-right: 0;
   }
 }
 

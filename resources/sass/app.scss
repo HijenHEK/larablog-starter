@@ -7,7 +7,7 @@
     box-sizing: border-box;
 }
 body {
-
+    overflow-x: hidden;
     font-family: 'Nunito', Arial, Helvetica, sans-serif;
     position: relative;
     background-color: rgb(250, 250, 250);
@@ -50,7 +50,6 @@ ul li {
         font-size: 1.5rem;
         font-weight: 700;
         color: rgb(255, 255, 255);
-
     }
     .body form {
         width: 100%;
@@ -109,6 +108,7 @@ ul li {
                 background-color: rgb(232,240,254);
                 border: none;
                 border-radius: 5px;
+                margin: 0 auto;
                 cursor: pointer;
                 box-shadow: 0px 0px 1px 1px rgb(232,240,254);
                 font-size: 1rem;
@@ -120,6 +120,84 @@ ul li {
         }
     }
 
+
+}
+
+.contact-us {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    .contact-section {
+        flex: 0.8;
+        width: 100%;
+        .head {
+            margin: 1rem 0;
+        }
+        .content form{
+            .row {
+                display: flex;
+                width: 100%;
+                justify-content: flex-start;
+                &>*:first-child {
+                    margin-right: 2rem;
+                }
+            }
+
+            .group {
+                width: 100%;
+                .control {
+                    padding: 0.5rem 1rem;
+                    margin: 0.5rem 0;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(230, 230, 230);
+                    width: 100%;
+
+                }
+
+                .is-invalid {
+                    color: rgb(255, 80, 80);
+                }
+            }
+            textarea {
+                width: 100%;
+                padding: 0.5rem 1rem;
+                    margin: 0.5rem 0;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(230, 230, 230);
+            }
+            .btn {
+                border: none;
+                background-color: rgb(24, 24, 24);
+                color: white;
+                font-size: 1rem;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+
+            }
+        }
+    }
+    .info-sidebar {
+        margin: 1rem 0;
+        .head {
+            margin-bottom: 1rem;
+        }
+        .content {
+            ul {
+                li {
+                    margin: 0.5rem 0;
+                    &>*:first-child{
+                        margin-right: 1rem;
+                    }
+                    &>*:last-child{
+                        color: rgb(0, 113, 199);
+                    }
+                }
+            }
+        }
+    }
 }
 
 .header {
@@ -545,6 +623,31 @@ footer {
         .recent {
             display: none;
         }
+    }
+
+    .contact-us {
+        flex-direction: column;
+        align-items: flex-start;
+        .contact-section {
+            flex: 1;
+            width: 100%;
+            .head {
+                margin: 1rem 0;
+            }
+            .content form{
+                .row {
+                    flex-direction: column;
+                    width: 100%;
+                    &>*:first-child {
+                        margin-right: 0;
+                    }
+                }
+
+
+
+            }
+        }
+
     }
 }
 
