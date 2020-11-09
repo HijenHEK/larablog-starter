@@ -38,7 +38,8 @@ ul li {
 }
 
 .card {
-  background-color: #242424;
+  background-color: #333333;
+  box-shadow: 0 0 3px 2px rgba(160, 160, 160, 0.5);
   padding: 2rem;
   border-radius: 10px;
   min-width: 300px;
@@ -509,6 +510,17 @@ footer .container .copyright-text {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: stretch;
+}
+
+.main .posts .no-post {
+  align-self: flex-start;
+}
+
+.main .posts .btn {
+  max-width: 150px;
+  margin: 0 auto;
+  align-self: flex-start;
 }
 
 .main .sidebar {
@@ -599,6 +611,7 @@ footer .container .copyright-text {
   min-width: 250px;
   max-width: 500px;
   overflow: hidden;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.111);
   box-shadow: 0 0 3px 2px rgba(189, 189, 189, 0.124);
 }
@@ -677,7 +690,7 @@ footer .container .copyright-text {
 
 .tags .tag {
   color: white;
-  background-color: rgba(220, 129, 44, 0.9);
+  background-color: #8B9EBD;
   border-radius: 5px;
   padding: 0.1rem 0.4rem;
   margin: 0.3rem 0.2rem;
@@ -685,14 +698,15 @@ footer .container .copyright-text {
 }
 
 .tags .fa {
-  color: rgba(220, 129, 44, 0.719);
+  color: #8B9EBD;
   margin-right: 0.5rem;
 }
 
 .tags .tag:hover {
-  color: #f08d30;
-  background-color: rgba(255, 255, 255, 0.72);
-  border: 2px solid #dc812c;
+  color: #8B9EBD;
+  background-color: white;
+  border: 2px solid #8B9EBD;
+  transform: all 0.2s ease-in-out;
 }
 
 .dashboard {
@@ -729,6 +743,7 @@ footer .container .copyright-text {
   cursor: pointer;
   opacity: 0.7;
   border-radius: 5px;
+  text-align: center;
 }
 
 .btn:hover,

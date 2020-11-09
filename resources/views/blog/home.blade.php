@@ -44,19 +44,30 @@
                 </div>
                 @empty
 
+
                     @if ($profile)
 
-                    <h4>you didnt share anything with us !</h4>
+                        <div class="no-post">
+                            @can('create_post')
 
-                    <div class="btn btn-success mt-3">
-                        <a class="text-white" href="/posts/create">
-                            Create One
-                        </a>
-                    </div>
+                            <h4>you didnt share anything with us !</h4>
+                            <br>
+                                <div class="btn btn-success">
+                                    <a class="text-white" href="/posts/create">
+                                        Create One
+                                    </a>
+                                </div>
+                            @else
+
+                                <h4>you are not allowed to post ! sorry </h4>
+
+
+                            @endcan
+                        </div>
 
                     @else
 
-                    <h4>no post yet ! from {{$user->name}}</h4>
+                    <h4 class="no-post">no post yet ! from {{$user->name}}</h4>
 
                     @endif
 
