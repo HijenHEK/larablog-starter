@@ -77,6 +77,8 @@ Route::post('/notify' ,  [NotifController::class, 'store']);
 Route::get('/notify' ,  [NotifController::class, 'index']);
 
 Route::get('/dashboard/users',[UserController::class,'index'])->middleware('can:manage_users');
+Route::get('/users/{user}',[UserController::class,'edit'])->middleware('can:manage_users');
+Route::put('/users/{user}',[UserController::class,'update'])->middleware('can:manage_users');
 
 // Using PHP callable syntax...
 // Route::get('/users', [UserController::class, 'index']);
