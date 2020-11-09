@@ -341,7 +341,7 @@ ul li {
 .header {
   width: 100%;
   padding: 0.5rem 2rem;
-  background-color: #181818;
+  background-color: rgba(24, 24, 24, 0.6);
   color: white;
   position: fixed;
   top: 0;
@@ -371,7 +371,7 @@ ul li {
 }
 
 .nav .nav-bar {
-  color: #a5a5a5;
+  color: #e6e6e6;
   display: flex;
   align-items: center;
 }
@@ -404,16 +404,10 @@ ul li {
   font-weight: 700;
 }
 
-.nav .drop {
-  background-color: #181818;
-}
-
 .nav .drop .drop-toggler {
   padding: 15px;
-  font-weight: 500;
-  color: white;
-  background-color: #181818;
-  box-shadow: 0 0 2px 0px #181818;
+  font-weight: 700;
+  color: #edae73;
 }
 
 .nav .drop .drop-toggler i {
@@ -421,7 +415,7 @@ ul li {
 }
 
 .nav .drop .drop-menu {
-  background-color: #242424;
+  background-color: rgba(36, 36, 36, 0.6);
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -451,7 +445,10 @@ ul li {
 }
 
 footer {
-  background-color: #181818;
+  background-image: url("/images/blog-post-03.jpg");
+  background-color: rgba(24, 24, 24, 0.8);
+  background-blend-mode: overlay;
+  background-position: bottom;
   padding: 2rem;
   width: 100%;
   margin-top: 2rem;
@@ -490,9 +487,12 @@ footer .container .copyright-text {
 
 .page-heading {
   width: 100%;
-  background-color: #242424;
+  background-image: url("/images/blog-post-03.jpg");
+  background-color: rgba(24, 24, 24, 0.3);
+  background-blend-mode: overlay;
+  background-position: top;
   color: white;
-  padding: 7rem 2rem 4rem 2rem;
+  padding: 6rem 2rem 3rem 2rem;
 }
 
 .main {
@@ -770,7 +770,7 @@ footer .container .copyright-text {
   }
 
   .nav .nav-bar {
-    color: #a5a5a5;
+    color: #dddddd;
     display: flex;
     align-items: center;
   }
@@ -784,7 +784,7 @@ footer .container .copyright-text {
     opacity: 0;
     display: flex;
     flex-direction: column;
-    background-color: #242424;
+    background-color: rgba(36, 36, 36, 0.6);
     right: -10rem;
     top: 100%;
     transition: all 0.3s 0.2s ease-in-out;
@@ -798,7 +798,7 @@ footer .container .copyright-text {
 
   .nav .nav-bar .nav-items .nav-item:hover {
     color: white;
-    font-weight: 700;
+    font-weight: 500;
     transition: all 0 0.2s ease-in;
     background-color: #7b7b7b;
   }

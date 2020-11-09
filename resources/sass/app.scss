@@ -283,7 +283,7 @@ ul li {
 .header {
     width: 100%;
     padding: 0.5rem 2rem;
-    background-color: rgb(24, 24, 24);
+    background-color: rgba(24, 24, 24, 0.6);
     color : rgb(255, 255, 255);
     position: fixed;
     top: 0;
@@ -309,7 +309,7 @@ ul li {
     align-items: center;
     font-size: medium;
     .nav-bar{
-        color : rgb(165, 165, 165);
+        color : rgb(230, 230, 230);
 
         display: flex;
         align-items: center;
@@ -344,21 +344,19 @@ ul li {
 
     }
     .drop {
-        background-color: rgb(24, 24, 24);
 
         .drop-toggler {
             padding: 15px;
 
-            font-weight: 500;
-            color: white;
-            background-color: rgb(24, 24, 24);
-            box-shadow: 0 0 2px 0px  rgb(24, 24, 24);;
+            font-weight: 700;
+            color: rgb(237, 174, 115);
+
             i {
                 margin-right: 0.2rem;
             }
         }
         .drop-menu {
-            background-color : rgb(36, 36, 36);
+            background-color : rgba(36, 36, 36, 0.6);
 
             position : absolute ;
             display: flex;
@@ -391,8 +389,11 @@ ul li {
 
 //footer
 footer {
-    background-color: rgb(24, 24, 24);
-    padding: 2rem;
+    background-image: url('/images/blog-post-03.jpg');
+    background-color:  rgba(24, 24, 24, 0.8);
+    background-blend-mode: overlay;
+    background-position: bottom;
+     padding: 2rem;
     width: 100%;
     margin-top: 2rem;
     .container {
@@ -433,9 +434,12 @@ footer {
 
 .page-heading {
     width: 100%;
-    background-color: rgb(36, 36, 36);
+    background-image: url('/images/blog-post-03.jpg');
+    background-color:  rgba(24, 24, 24, 0.3);
+    background-blend-mode: overlay;
+    background-position: top;
     color: white;
-    padding: 7rem 2rem 4rem 2rem;
+    padding: 6rem 2rem 3rem 2rem;
 
 }
 
@@ -712,7 +716,7 @@ footer {
         align-items: center;
         font-size: medium;
         .nav-bar{
-            color : rgb(165, 165, 165);
+            color : rgb(221, 221, 221);
             display: flex;
             align-items: center;
             .toggler {
@@ -723,7 +727,7 @@ footer {
                 opacity: 0;
                 display: flex;
                 flex-direction: column;
-                background-color: rgb(36, 36, 36);
+                background-color: rgba(36, 36, 36, 0.6);
                 right: -10rem;
                 top: 100%;
 
@@ -736,7 +740,7 @@ footer {
                 }
                 .nav-item:hover {
                     color : rgb(255, 255, 255);
-                    font-weight: 700;
+                    font-weight: 500;
                     transition: all 0 0.2s ease-in;
                     background-color: rgb(123, 123, 123);
 

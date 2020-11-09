@@ -57,6 +57,7 @@
                 <a id="drop" class="drop-toggler"  onclick="toggleDrop()" href="#" role="button">
                     <i class="fa fa-user"></i>
                     {{ Auth::user()->name }}  <small>#{{Auth::user()->role()}}</small>
+                    <i class="fa fa-menu"></i>
                 </a>
 
                 <div class="drop-menu" >
@@ -68,7 +69,7 @@
                     </a>
 
                     @can('manage_users')
-                    <a class="drop-item" href="/dashboard">
+                    <a class="drop-item" href="/dashboard/users">
                         {{ __('Dashboard') }}
                     </a>
                     @endcan
