@@ -28,7 +28,7 @@
                         <li><a href="#">{{$post->created_at->diffForHumans()}}</a></li>
                         <li><a href="#">12 Comments</a></li>
                       </ul>
-                     <p class="body">   {{Str::limit($post->body, 30, ' ...')}}</p>
+                     <p class="body">   {{Str::limit($post->body, 100, ' ...')}}</p>
                       <div class="options">
 
                             <ul class="tags">
@@ -86,7 +86,7 @@
                         </div>
                         <div class="content">
                             <ul class="tags">
-                                @foreach ($tags as $tag)
+                                @foreach ($user->tags() as $tag)
                             <li class="tag"><a href="/user/{{$user->id}}/?tag={{$tag->id}}">{{$tag->name}}</a></li>
 
                                 @endforeach

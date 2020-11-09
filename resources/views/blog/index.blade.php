@@ -24,7 +24,7 @@
 
                             {{-- <span class="cat">Lifestyle</span> --}}
                             <a class="title" href="/posts/{{$post->id}}" title="{{$post->title}}">
-                                <h4>{{Str::limit($post->title, 60, ' ...')}}</h4>
+                                <h4>{{Str::limit($post->title, 100, ' ...')}}</h4>
                             </a>
                             <ul class="info">
                                 <li><a class="name" href="/user/{{$post->user->id}}" title="{{$post->user->name}}">{{Str::limit($post->user->name , 14, ' ..')}}</a></li>
@@ -32,7 +32,7 @@
                                 <li><a class="date" href="#">{{$post->created_at->diffForHumans()}}</a></li>
                                 <li><a class="comment-cout" href="#">12 Comments</a></li>
                             </ul>
-                            <p class="body"> {{Str::limit($post->body, 60, ' ...')}}</p>
+                            <p class="body"> {{Str::limit($post->body,100, ' ...')}}</p>
                             <div class="options">
                                         <ul class="tags">
                                             <li><i class="fa fa-tags"></i></li>

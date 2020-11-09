@@ -71,4 +71,7 @@ class User extends Authenticatable
     public function abilities(){
         return $this->roles->map->abilities->flatten()->pluck('name')->unique();
     }
+    public function tags(){
+        return $this->posts->map->tags->flatten()->unique('name');
+    }
 }
