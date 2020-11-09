@@ -32,6 +32,10 @@ class BlogController extends Controller
     public function contact() {
         return view('blog.contact');
     }
+    public function dash() {
+        $users = User::all();
+        return view('blog.dashboard',compact('users'));
+    }
     public function profile(User $user) {
 
 

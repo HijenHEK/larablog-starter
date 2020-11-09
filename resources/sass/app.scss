@@ -626,7 +626,57 @@ footer {
     }
 }
 
+.dashboard {
+    margin-top: 5rem;
+    padding: 0 2rem;
+    min-height: 60%;
+    h1 {
+        margin: 1rem;
 
+    }
+    table {
+        margin-top: 1rem;
+        width: 100%;
+        font-weight: 500;
+        tr {
+            &:first-child{
+                font-weight: 700;
+                td {
+                    border-bottom: 2px solid black;
+
+                }
+            }
+            td {
+                padding: 0.5rem ;
+
+            }
+
+        }
+
+    }
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+    border-radius: 5px;
+
+}
+.btn:hover , .btn:active {
+    opacity: 1;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+}
+.btn-success {
+    background-color: rgb(30, 162, 41);
+    color: white;
+}
+.btn-danger {
+    background-color: rgb(235, 38, 16);
+    color: white;
+}
 @media(min-width: 720px ) {
     @media( max-width : 850px) {
         .info-sidebar {

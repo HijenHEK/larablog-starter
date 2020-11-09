@@ -66,6 +66,13 @@
                     <a class="drop-item" href="/notify">
                         {{ __('Notifications') }}
                     </a>
+
+                    @can('manage_users')
+                    <a class="drop-item" href="/dashboard">
+                        {{ __('Dashboard') }}
+                    </a>
+                    @endcan
+
                     <a class="drop-item " href="{{ route('logout') }}" onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
