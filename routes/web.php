@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\NotifController;
 /*
@@ -75,7 +76,7 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->middleware('
 Route::post('/notify' ,  [NotifController::class, 'store']);
 Route::get('/notify' ,  [NotifController::class, 'index']);
 
-Route::get('/dashboard',[BlogController::class,'dash'])->middleware('can:manage_users');
+Route::get('/dashboard/users',[UserController::class,'index'])->middleware('can:manage_users');
 
 // Using PHP callable syntax...
 // Route::get('/users', [UserController::class, 'index']);
