@@ -11,13 +11,14 @@ class Role extends Model
     public function abilities(){
         return $this->belongsToMany(Ability::class);
     }
-    public function user(){
-        return $this->belongsToMany(User::class);
+    public function users(){
+        return $this->hasMany(User::class);
     }
     public function allowTo($ability){
         if(is_string($ability)){
             $ability = Ability::whereName($ability)->firstOrFail();
         }
         $this->abilities()->syncWithoutDetaching($ability);
+        return $this;
     }
 }

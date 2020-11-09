@@ -46,17 +46,20 @@ class User extends Authenticatable
         return $this->hasMany(Post::class) ;
     }
 
-    public function roles(){
-        return $this->belongsToMany(Role::class);
-    }
     public function role(){
-        return $this->roles()->first()->name ;
+        return $this->belongsTo(Role::class);
     }
+
     public function assignRole($role) {
         if(is_string($role)){
             $role = Role::whereName($role)->firstOrFail();
         }
-        $this->roles()->syncWithoutDetaching($role);
+
+        $this->role()->dissociate();
+        $this->role()->associate($role);
+
+        $this->save();
+        return $this;
 
     }
     public function denyRole($role) {
@@ -69,7 +72,7 @@ class User extends Authenticatable
         }
     }
     public function abilities(){
-        return $this->roles->map->abilities->flatten()->pluck('name')->unique();
+        return $this->role->abilities->flatten()->pluck('name')->unique();
     }
     public function tags(){
         return $this->posts->map->tags->flatten()->unique('name');
