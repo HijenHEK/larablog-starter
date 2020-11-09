@@ -56,7 +56,7 @@
             <div class="drop">
                 <a id="drop" class="drop-toggler"  onclick="toggleDrop()" href="#" role="button">
                     <i class="fa fa-user"></i>
-                    {{ Auth::user()->name }}  <small>#{{Auth::user()->role()}}</small>
+                    {{ Auth::user()->name }}  <small>#{{Auth::user()->role->name}}</small>
                     <i class="fa fa-menu"></i>
                 </a>
 
