@@ -215,37 +215,56 @@ ul li {
   color: #dc812c;
 }
 
-.contact-us {
+.contact-us,
+.new-post-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
 }
 
-.contact-us .contact-section {
+.contact-us .contact-section,
+.contact-us .new-post,
+.new-post-main .contact-section,
+.new-post-main .new-post {
   flex: 0.6;
   width: 100%;
 }
 
-.contact-us .contact-section .head {
+.contact-us .contact-section .head,
+.contact-us .new-post .head,
+.new-post-main .contact-section .head,
+.new-post-main .new-post .head {
   margin: 1rem 0;
 }
 
-.contact-us .contact-section .content form .row {
+.contact-us .contact-section .content form .row,
+.contact-us .new-post .content form .row,
+.new-post-main .contact-section .content form .row,
+.new-post-main .new-post .content form .row {
   display: flex;
   width: 100%;
   justify-content: flex-start;
 }
 
-.contact-us .contact-section .content form .row > *:first-child {
+.contact-us .contact-section .content form .row > *:first-child,
+.contact-us .new-post .content form .row > *:first-child,
+.new-post-main .contact-section .content form .row > *:first-child,
+.new-post-main .new-post .content form .row > *:first-child {
   margin-right: 2rem;
 }
 
-.contact-us .contact-section .content form .group {
+.contact-us .contact-section .content form .group,
+.contact-us .new-post .content form .group,
+.new-post-main .contact-section .content form .group,
+.new-post-main .new-post .content form .group {
   width: 100%;
 }
 
-.contact-us .contact-section .content form .group .control {
+.contact-us .contact-section .content form .group .control,
+.contact-us .new-post .content form .group .control,
+.new-post-main .contact-section .content form .group .control,
+.new-post-main .new-post .content form .group .control {
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
   border: none;
@@ -254,11 +273,17 @@ ul li {
   width: 100%;
 }
 
-.contact-us .contact-section .content form .group .is-invalid {
+.contact-us .contact-section .content form .group .is-invalid,
+.contact-us .new-post .content form .group .is-invalid,
+.new-post-main .contact-section .content form .group .is-invalid,
+.new-post-main .new-post .content form .group .is-invalid {
   color: #ff5050;
 }
 
-.contact-us .contact-section .content form textarea {
+.contact-us .contact-section .content form textarea,
+.contact-us .new-post .content form textarea,
+.new-post-main .contact-section .content form textarea,
+.new-post-main .new-post .content form textarea {
   width: 100%;
   padding: 0.5rem 1rem;
   margin: 0.5rem 0;
@@ -267,7 +292,17 @@ ul li {
   background-color: #e6e6e6;
 }
 
-.contact-us .contact-section .content form .btn {
+.contact-us .contact-section .content form select,
+.contact-us .new-post .content form select,
+.new-post-main .contact-section .content form select,
+.new-post-main .new-post .content form select {
+  max-width: 150px;
+}
+
+.contact-us .contact-section .content form .btn,
+.contact-us .new-post .content form .btn,
+.new-post-main .contact-section .content form .btn,
+.new-post-main .new-post .content form .btn {
   border: none;
   background-color: #181818;
   color: white;
@@ -276,25 +311,30 @@ ul li {
   padding: 0.5rem 1rem;
 }
 
-.contact-us .info-sidebar {
+.contact-us .info-sidebar,
+.new-post-main .info-sidebar {
   flex: 0.4;
   margin: 1rem 0;
   padding: 2rem;
 }
 
-.contact-us .info-sidebar .head {
+.contact-us .info-sidebar .head,
+.new-post-main .info-sidebar .head {
   margin-bottom: 1rem;
 }
 
-.contact-us .info-sidebar .content ul li {
+.contact-us .info-sidebar .content ul li,
+.new-post-main .info-sidebar .content ul li {
   margin: 0.5rem 0;
 }
 
-.contact-us .info-sidebar .content ul li > *:first-child {
+.contact-us .info-sidebar .content ul li > *:first-child,
+.new-post-main .info-sidebar .content ul li > *:first-child {
   margin-right: 1rem;
 }
 
-.contact-us .info-sidebar .content ul li > *:last-child {
+.contact-us .info-sidebar .content ul li > *:last-child,
+.new-post-main .info-sidebar .content ul li > *:last-child {
   color: #0071c7;
 }
 

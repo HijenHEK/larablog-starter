@@ -198,12 +198,12 @@ ul li {
     }
 }
 
-.contact-us {
+.contact-us , .new-post-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    .contact-section {
+    .contact-section , .new-post{
         flex: 0.6;
         width: 100%;
         .head {
@@ -242,6 +242,9 @@ ul li {
                     border: none;
                     outline: none;
                     background-color: rgb(230, 230, 230);
+            }
+            select {
+                max-width: 150px;
             }
             .btn {
                 border: none;
